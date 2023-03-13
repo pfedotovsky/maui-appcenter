@@ -11,5 +11,5 @@ echo "dotnet version: $(dotnet --version)"
 
 # use dotnet as nuget
 echo """#!/bin/sh
-exec dotnet
+exec dotnet restore 'MAUI-AppCenter/MAUI-AppCenter.sln'
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/nuget
