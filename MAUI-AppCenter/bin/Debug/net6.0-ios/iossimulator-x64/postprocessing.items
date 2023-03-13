@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="MAUI-AppCenter.app/MAUI-AppCenter">
+      <BCSymbolMapName>MAUI-AppCenter.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>MAUI-AppCenter.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/pfedotovsky/Projects/maui-appcenter/MAUI-AppCenter/obj/Debug/net6.0-ios/iossimulator-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>MAUI-AppCenter.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/pfedotovsky/Projects/maui-appcenter/MAUI-AppCenter</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
