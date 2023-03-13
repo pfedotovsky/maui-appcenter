@@ -21,17 +21,6 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	  <IntermediateOutputPath>obj\Debug</IntermediateOutputPath>
-	  <DebugSymbols>false</DebugSymbols>
-	  <DebugType></DebugType>
-	  <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
-	  <DefineConstants></DefineConstants>
-	  <WarningLevel>4</WarningLevel>
-	  <DocumentationFile></DocumentationFile>
-	  <NoWarn></NoWarn>
-	  <NoStdLib>false</NoStdLib>
-	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
