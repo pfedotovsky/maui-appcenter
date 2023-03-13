@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+MAUI-AppCenter/.vscode/launch.json
+MAUI-AppCenter/.vscode/tasks.json
