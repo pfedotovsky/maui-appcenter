@@ -13,6 +13,7 @@ dotnet restore ./MAUI-AppCenter.sln
 
 # Use msbuild from .NET SDK
 echo """#!/bin/sh
+PATH="/usr/local/bin/dotnet:$PATH"
 exec dotnet build \"\$@\"
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
 
