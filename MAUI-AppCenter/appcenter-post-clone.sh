@@ -8,9 +8,6 @@ echo "dotnet path: $(which dotnet)"
 # Install MAUI iOS workload
 dotnet workload install maui-ios
 
-# Restore NuGet packages
-dotnet restore ./MAUI-AppCenter.sln
-
 # Use msbuild from .NET SDK
 echo """#!/bin/sh
 PATH="/usr/local/bin/dotnet:$PATH"
