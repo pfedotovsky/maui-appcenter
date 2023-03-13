@@ -8,10 +8,10 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>MAUI-AppCenter</ApplicationTitle>
+		<ApplicationTitle>MAUI AppCenter</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.maui_appcenter</ApplicationId>
+		<ApplicationId>com.pfedotovsky.maui_appcenter</ApplicationId>
 		<ApplicationIdGuid>eb526a0c-4252-45db-abcd-66b3631d8edc</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -38,5 +38,4 @@
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
-
 </Project>
