@@ -27,8 +27,8 @@ Global
 		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Debug|iPhone.Build.0 = Debug|Any CPU
 		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Release|iPhone.ActiveCfg = Debug|Any CPU
-		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Release|iPhone.Build.0 = Debug|Any CPU
+		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2775E406-7304-4328-9101-4FE02C2DB5B3}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
