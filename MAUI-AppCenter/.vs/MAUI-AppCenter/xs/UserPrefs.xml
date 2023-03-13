@@ -1,4 +1,28 @@
 ﻿<Properties StartupConfiguration="{2775E406-7304-4328-9101-4FE02C2DB5B3}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainPage.xaml">
+    <Files>
+      <File FileName="MainPage.xaml.cs" />
+      <File FileName="MainPage.xaml" Line="12" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MAUI-AppCenter" expanded="True" selected="True">
+            <Node name="MAUI-AppCenter" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7C620818-215B-4097-B893-30B36CB34F70" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.MAUI-AppCenter FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.MAUI-AppCenter PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7C620818-215B-4097-B893-30B36CB34F70" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
