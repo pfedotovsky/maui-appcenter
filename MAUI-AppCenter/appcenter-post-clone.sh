@@ -5,11 +5,11 @@ echo "CPU architecture: $(uname -m)"
 echo "dotnet version: $(dotnet --version)"
 echo "dotnet path: $(which dotnet)"
 
-# Restore NuGet packages
-dotnet restore ./MAUI-AppCenter.sln
-
 # Install MAUI iOS workload
 dotnet workload install maui-ios
+
+# Restore NuGet packages
+dotnet restore ./MAUI-AppCenter.sln
 
 # Use msbuild from .NET SDK
 echo """#!/bin/sh
