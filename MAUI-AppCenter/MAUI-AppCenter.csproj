@@ -11,7 +11,7 @@
 		<ApplicationTitle>MAUI AppCenter</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.pfedotovsky.maui_appcenter</ApplicationId>
+		<ApplicationId>com.pfedotovsky.maui-appcenter</ApplicationId>
 		<ApplicationIdGuid>eb526a0c-4252-45db-abcd-66b3631d8edc</ApplicationIdGuid>
 
 		<!-- Versions -->
