@@ -14,7 +14,7 @@ PATH="/usr/local/bin/dotnet:$PATH"
 exec dotnet build \"\$@\"
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
 
-# Use dotnet as nuget
+# Use dummy nuget restore
 echo """#!/bin/sh
 echo Dummy Restore
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/nuget
