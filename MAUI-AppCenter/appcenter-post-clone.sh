@@ -14,7 +14,7 @@ dotnet build
 
 # Use dummy msbuild
 echo """#!/bin/sh
-echo "$(msbuild --version)"
+echo \"$(msbuild --version)\"
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
 
 # Use dummy nuget
