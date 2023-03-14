@@ -7,13 +7,14 @@ dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
-printenv
+# Print environment variables
+# printenv
 
 # Install MAUI workloads
 dotnet workload restore
 
-# Build the app (Debug iOS Simulator)
-dotnet build
+# Build the app (iOS Simulator)
+dotnet build --configuration $APPCENTER_XAMARIN_CONFIGURATION
 
 # Use dummy msbuild
 echo """#!/bin/sh
