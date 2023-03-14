@@ -6,6 +6,7 @@ echo "dotnet version: $(dotnet --version)"
 echo "dotnet path: $(which dotnet)"
 echo "msbuild version: $(msbuild --version)"
 echo $APPCENTER_XAMARIN_CONFIGURATION
+echo $APPCENTER_XAMARIN_PROJECT
 
 # Install MAUI iOS workload
 dotnet workload install maui-ios
@@ -15,7 +16,7 @@ dotnet build
 
 # Use dummy msbuild
 echo """#!/bin/sh
-echo \"$(msbuild /version /nologo)\"
+echo $(msbuild /version /nologo)
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
 
 # Use dummy nuget
