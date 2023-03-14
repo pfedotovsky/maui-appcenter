@@ -7,6 +7,7 @@ echo "dotnet path: $(which dotnet)"
 echo "msbuild version: $(msbuild --version)"
 echo $APPCENTER_XAMARIN_CONFIGURATION
 echo $APPCENTER_XAMARIN_PROJECT
+dotnet --info
 
 # Install MAUI workloads
 dotnet workload restore
