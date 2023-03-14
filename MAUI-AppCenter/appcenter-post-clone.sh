@@ -2,7 +2,7 @@
 
 echo "Post-clone script executing..."
 
-DOTNET_NOLOGO=true
+export DOTNET_NOLOGO=true
 dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
