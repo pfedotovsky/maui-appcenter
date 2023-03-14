@@ -5,6 +5,7 @@ echo "CPU architecture: $(uname -m)"
 echo "dotnet version: $(dotnet --version)"
 echo "dotnet path: $(which dotnet)"
 echo "msbuild version: $(msbuild --version)"
+echo $APPCENTER_XAMARIN_CONFIGURATION
 
 # Install MAUI iOS workload
 dotnet workload install maui-ios
