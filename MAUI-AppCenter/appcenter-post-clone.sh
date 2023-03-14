@@ -8,8 +8,8 @@ echo "msbuild version: $(msbuild --version)"
 echo $APPCENTER_XAMARIN_CONFIGURATION
 echo $APPCENTER_XAMARIN_PROJECT
 
-# Install MAUI iOS workload
-dotnet workload install maui-ios
+# Install MAUI workloads
+dotnet workload restore
 
 # Build the app (Debug iOS Simulator)
 dotnet build
