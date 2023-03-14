@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
 echo "Post-clone script executing..."
-echo "CPU architecture: $(uname -m)"
-echo "dotnet version: $(dotnet --version)"
-echo "dotnet path: $(which dotnet)"
-echo "msbuild version: $(msbuild --version)"
-echo $APPCENTER_XAMARIN_CONFIGURATION
-echo $APPCENTER_XAMARIN_PROJECT
+
+DOTNET_NOLOGO=true
 dotnet --info
+
+echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
 # Install MAUI workloads
 dotnet workload restore
