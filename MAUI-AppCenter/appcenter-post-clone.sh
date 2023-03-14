@@ -6,6 +6,8 @@ export DOTNET_NOLOGO=true
 dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
+echo $APPCENTER_XCODE_PROJECT
+echo $APPCENTER_XCODE_SCHEME
 
 # Install MAUI workloads
 dotnet workload restore
