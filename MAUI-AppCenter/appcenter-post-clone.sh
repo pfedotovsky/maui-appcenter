@@ -8,13 +8,15 @@ echo "dotnet path: $(which dotnet)"
 # Install MAUI iOS workload
 dotnet workload install maui-ios
 
-# Use msbuild from .NET SDK
+# Build the app (Debug iOS Simulator)
+dotnet build
+
+# Use dummy msbuild
 echo """#!/bin/sh
-PATH="/usr/local/bin/dotnet:$PATH"
-exec dotnet build \"\$@\"
+echo Dummy Build
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
 
-# Use dummy nuget restore
+# Use dummy nuget
 echo """#!/bin/sh
 echo Dummy Restore
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/nuget
