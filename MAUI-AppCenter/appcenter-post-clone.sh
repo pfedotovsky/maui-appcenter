@@ -6,11 +6,12 @@ export DOTNET_NOLOGO=true
 dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
+echo "Path is $PATH"
 
 # Print tasks info
-find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
-find $AGENT_ROOTDIRECTORY -name 'bash.js' | xargs cat
-find $AGENT_ROOTDIRECTORY -name 'usedotnet.js' | xargs cat
+# find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
+# find $AGENT_ROOTDIRECTORY -name 'bash.js' | xargs cat
+# find $AGENT_ROOTDIRECTORY -name 'usedotnet.js' | xargs cat
 
 # Disable 'change dotnet' task
 echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
