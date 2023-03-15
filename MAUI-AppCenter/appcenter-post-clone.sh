@@ -7,18 +7,13 @@ dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
-# Use custom dummy nuget
-pwd
-chmod +x ./AppCenter/nuget
-launchctl setenv PATH $(pwd)/AppCenter:$PATH
-launchctl getenv PATH
-
 # Print xamarin.ios task
 iosBuildTaskPath=$(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
 echo "Xamarin build task path is: $iosBuildTaskPath"
 
 find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
 find $AGENT_ROOTDIRECTORY -name 'bash.js' | xargs cat
+find $AGENT_ROOTDIRECTORY -name 'cmdlinetask.js' | xargs cat
 
 # Install MAUI workloads
 dotnet workload restore

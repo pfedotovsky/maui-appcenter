@@ -1,4 +1,2 @@
 #!/bin/sh
-echo "nuget is: $(which nuget)"
-echo $PATH
 echo Dummy Nuget
