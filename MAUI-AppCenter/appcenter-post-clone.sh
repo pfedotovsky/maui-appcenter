@@ -17,6 +17,9 @@ launchctl getenv PATH
 iosBuildTaskPath=$(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
 echo "Xamarin build task path is: $iosBuildTaskPath"
 
+find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
+find $AGENT_ROOTDIRECTORY -name 'bash.js' | xargs cat
+
 # Install MAUI workloads
 dotnet workload restore
 
