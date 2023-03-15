@@ -9,7 +9,7 @@ echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
 # Use custom dummy nuget
 chmod +x ./AppCenter/nuget
-echo 'export PATH=./AppCenter:$PATH' >> ~/.bashrc
+echo "export PATH=$(pwd)/AppCenter"':$PATH' >> ~/.bashrc
 
 cat ~/.bashrc
 
