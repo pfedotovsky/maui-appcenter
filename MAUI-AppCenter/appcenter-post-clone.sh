@@ -8,10 +8,9 @@ dotnet --info
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
 # Use custom dummy nuget
+pwd
 chmod +x ./AppCenter/nuget
-echo "export PATH=$(pwd)/AppCenter"':$PATH' >> ~/.bashrc
-
-cat ~/.bashrc
+launchctl setenv PATH $(pwd)/AppCenter:$PATH
 
 # Print xamarin.ios task
 iosBuildTaskPath=$(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
