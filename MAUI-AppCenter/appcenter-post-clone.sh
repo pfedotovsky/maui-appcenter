@@ -17,6 +17,7 @@ echo "Path is $PATH"
 echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
 
 # Override nuget command
+mkdir ~/bin
 cp ./AppCenter/nuget ~/bin/nuget
 ls ~/bin
 
