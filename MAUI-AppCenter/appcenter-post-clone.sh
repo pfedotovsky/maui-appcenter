@@ -7,13 +7,13 @@ dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
-# Print xamarin.ios task
-iosBuildTaskPath=$(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
-echo "Xamarin build task path is: $iosBuildTaskPath"
-
+# Print tasks info
 find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
 find $AGENT_ROOTDIRECTORY -name 'bash.js' | xargs cat
-find $AGENT_ROOTDIRECTORY -name 'cmdlinetask.js' | xargs cat
+find $AGENT_ROOTDIRECTORY -name 'usedotnet.js' | xargs cat
+
+# Disable 'change dotnet' task
+echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
 
 # Install MAUI workloads
 dotnet workload restore
