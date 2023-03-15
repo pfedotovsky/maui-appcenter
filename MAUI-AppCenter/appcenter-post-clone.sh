@@ -7,11 +7,12 @@ dotnet --info
 
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
-# Print environment variables
-# printenv
+# Use custom dummy nuget
+chmod +x ./AppCenter/nuget
+export PATH=./AppCenter:$PATH
 
-# Print AppCenter build tasks
-find $AGENT_ROOTDIRECTORY/_tasks -name 'task.json' | xargs cat
+# Print xamarin.ios task
+find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
 
 # Install MAUI workloads
 dotnet workload restore
@@ -26,8 +27,3 @@ dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentif
 echo """#!/bin/sh
 echo $(msbuild /version /nologo)
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
-
-# Use dummy nuget
-echo """#!/bin/sh
-echo Dummy Restore
-""" | sudo tee /Library/Frameworks/Mono.framework/Commands/nuget
