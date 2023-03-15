@@ -11,7 +11,7 @@ echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 # printenv
 
 # Print AppCenter build tasks
-find $AGENT_ROOTDIRECTORY/_tasks -name '*.json' | xargs cat
+find $AGENT_ROOTDIRECTORY/_tasks -name 'task.json' | xargs cat
 
 # Install MAUI workloads
 dotnet workload restore
