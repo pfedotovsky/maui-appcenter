@@ -8,10 +8,10 @@ dotnet --info
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 
 # Print environment variables
-printenv
+# printenv
 
-# List build agent files
-find $AGENT_ROOTDIRECTORY
+# Print AppCenter build tasks
+find $AGENT_ROOTDIRECTORY/_tasks -name '*.json' | xargs cat
 
 # Install MAUI workloads
 dotnet workload restore
