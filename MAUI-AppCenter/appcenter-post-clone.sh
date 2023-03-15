@@ -11,6 +11,7 @@ echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 pwd
 chmod +x ./AppCenter/nuget
 launchctl setenv PATH $(pwd)/AppCenter:$PATH
+launchctl getenv PATH
 
 # Print xamarin.ios task
 iosBuildTaskPath=$(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
@@ -24,8 +25,3 @@ dotnet workload restore
 
 # Create release ipa for devices
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$(date +%s)
-
-# Use dummy msbuild
-echo """#!/bin/sh
-echo $(msbuild /version /nologo)
-""" | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
