@@ -10,6 +10,9 @@ echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 # Print environment variables
 printenv
 
+# List build agent files
+find $AGENT_ROOTDIRECTORY
+
 # Install MAUI workloads
 dotnet workload restore
 
