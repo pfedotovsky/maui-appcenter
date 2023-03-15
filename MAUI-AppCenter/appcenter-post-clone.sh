@@ -11,6 +11,11 @@ echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 chmod +x ./AppCenter/nuget
 echo 'export PATH=./AppCenter:$PATH' >> ~/.bashrc
 
+# Print nuget diagnostics
+echo "Nuget check..."
+which nuget
+echo $PATH
+
 # Print xamarin.ios task
 find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
 
