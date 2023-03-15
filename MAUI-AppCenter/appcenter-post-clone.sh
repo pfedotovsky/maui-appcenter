@@ -11,13 +11,11 @@ echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 chmod +x ./AppCenter/nuget
 echo 'export PATH=./AppCenter:$PATH' >> ~/.bashrc
 
-# Print nuget diagnostics
-echo "Nuget check..."
-which nuget
-echo $PATH
+cat ~/.bashrc
 
 # Print xamarin.ios task
-find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
+iosBuildTaskPath=$(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
+echo "Xamarin build task path is: $iosBuildTaskPath"
 
 # Install MAUI workloads
 dotnet workload restore
