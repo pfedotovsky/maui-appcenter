@@ -16,6 +16,10 @@ echo "Path is $PATH"
 # Disable 'change dotnet' task
 echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
 
+# Override nuget command
+cp ./AppCenter/nuget ~/bin/nuget
+ls ~/bin
+
 # Install MAUI workloads
 dotnet workload restore
 
