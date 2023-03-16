@@ -16,10 +16,10 @@ echo "Path is $PATH"
 # Disable 'change dotnet' task
 echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
 
+# Disable xamarin build
+echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
+
 # Override nuget command
-mkdir ~/bin
-cp ./AppCenter/nuget ~/bin/nuget
-ls ~/bin
 which nuget
 
 # Install MAUI workloads
