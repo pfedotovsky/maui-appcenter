@@ -18,8 +18,8 @@ echo "Nuget is $(which nuget)"
 # find $AGENT_ROOTDIRECTORY -name 'usedotnet.js' | xargs cat
 
 # Disable several redundant AppCenter tasks
-echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
-echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
+# echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
+# echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
 
 # Install MAUI workloads
 dotnet workload restore
