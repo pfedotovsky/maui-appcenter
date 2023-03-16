@@ -6,6 +6,7 @@ dotnet --info
 
 # Set up BASH_ENV; In AppCenter BASH_ENV should be set to ~/AppCenter/bash_env
 mv $APPCENTER_SOURCE_DIRECTORY/AppCenter ~
+ls ~/AppCenter
 
 # Log diagnostics information
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
