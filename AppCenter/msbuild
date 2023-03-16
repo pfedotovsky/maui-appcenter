@@ -1,0 +1,2 @@
+#!/bin/sh
+echo 15 # to prevent fallback to xbuild
