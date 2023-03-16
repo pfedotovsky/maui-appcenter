@@ -29,3 +29,8 @@ dotnet workload restore
 
 # Create release ipa for devices
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$APPCENTER_BUILD_ID
+
+# Use dummy msbuild
+echo """#!/bin/sh
+echo $(msbuild /version /nologo)
+""" | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
