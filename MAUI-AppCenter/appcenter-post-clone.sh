@@ -6,7 +6,6 @@ dotnet --info
 
 # Set up BASH_ENV; In AppCenter BASH_ENV should be set to ~/AppCenter/bash_env
 echo $BASH_ENV
-source $BASH_ENV
 echo "Path is $PATH"
 
 # Log diagnostics information
@@ -20,7 +19,7 @@ echo "Nuget is $(which nuget)"
 
 # Disable several redundant AppCenter tasks
 echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
-# echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
+echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
 
 # Install MAUI workloads
 dotnet workload restore
