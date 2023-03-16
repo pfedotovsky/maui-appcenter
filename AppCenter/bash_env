@@ -1,1 +1,1 @@
-export PATH=$(pwd):$PATH
+export PATH=$(dirname $BASH_ENV):$PATH
