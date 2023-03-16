@@ -1,1 +1,1 @@
-export PATH=$APPCENTER_SOURCE_DIRECTORY/AppCenter:$PATH
+export PATH=$(pwd):$PATH
