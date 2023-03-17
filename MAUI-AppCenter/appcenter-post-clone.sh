@@ -5,8 +5,9 @@ dotnet --info
 # printenv
 
 # Set up BASH_ENV; In AppCenter BASH_ENV should be set to ~/AppCenter/bash_env
-echo $BASH_ENV
-echo "Path is $PATH"
+echo "BASH_ENV is $BASH_ENV"
+echo "PATH is $PATH"
+mv $APPCENTER_SOURCE_DIRECTORY/AppCenter ~
 
 # Log diagnostics information
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
@@ -31,6 +32,6 @@ dotnet workload restore
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$APPCENTER_BUILD_ID
 
 # Use dummy msbuild
-echo """#!/bin/sh
-echo $(msbuild /version /nologo)
-""" | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
+# echo """#!/bin/sh
+# echo $(msbuild /version /nologo)
+# """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
