@@ -23,8 +23,8 @@ dotnet workload restore
 # Create release ipa for devices
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$APPCENTER_BUILD_ID
 
-# Set up BASH_ENV to override nuget; In AppCenter BASH_ENV should be set to something like ~/AppCenter/bash_env
-dirName=$(dirname $BASH_ENV)
+# Set up BASH_ENV to override nuget; In AppCenter BASH_ENV should be set to ~/AppCenter/bash_env
+dirName=~/AppCenter
 mkdir $dirName
 echo "export PATH=$dirName:$PATH" > $BASH_ENV
 echo "echo Dummy Nuget" > $dirName/nuget
