@@ -25,6 +25,7 @@ dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentif
 
 # Set up BASH_ENV to override nuget; In AppCenter BASH_ENV should be set to something like ~/AppCenter/bash_env
 dirName=$(dirname $BASH_ENV)
+mkdir $dirName
 echo "export PATH=$dirName:$PATH" > $BASH_ENV
 echo "echo Dummy Nuget" > $dirName/nuget
 
