@@ -16,8 +16,8 @@ echo "export PATH=$dirName:$PATH" > $BASH_ENV
 echo "echo Dummy Nuget" > $dirName/nuget
 chmod +x $dirName/nuget
 
-source $BASH_ENV
-echo "nuget now is $(which nuget)"
+# source $BASH_ENV
+# echo "nuget now is $(which nuget)"
 
 # Use dummy msbuild; 'echo 15' required to prevent fallback to xbuild as build task check for msbuild version 15 and above
 echo """#!/bin/sh
