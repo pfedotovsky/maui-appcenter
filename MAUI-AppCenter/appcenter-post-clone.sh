@@ -15,6 +15,8 @@ mkdir $dirName
 echo "export PATH=$dirName:$PATH" > $dirName/bash_env
 echo "echo Dummy Nuget" > $dirName/nuget
 
+echo $dirName/bash_env
+cat $dirName/bash_env
 cat $BASH_ENV
 
 # Use dummy msbuild; 'echo 15' required to prevent fallback to xbuild as build task check for msbuild version 15 and above
