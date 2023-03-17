@@ -9,15 +9,15 @@ echo "msbuild is $(which msbuild)"
 echo "BASH_ENV is $BASH_ENV"
 echo "PATH is $PATH"
 
-# Set up BASH_ENV to override nuget; In AppCenter BASH_ENV must be set to ~/AppCenter/bash_env
-dirName=~/AppCenter
+# Set up BASH_ENV to override nuget; In AppCenter BASH_ENV must be set to /Users/runner/AppCenter/bash_env
+dirName=$(dirname $BASH_ENV)
 mkdir $dirName
-echo "export PATH=$dirName:$PATH" > $dirName/bash_env
+echo "export PATH=$dirName:$PATH" > $BASH_ENV
 echo "echo Dummy Nuget" > $dirName/nuget
+chmod +x $dirName/nuget
 
-echo $dirName/bash_env
-cat $dirName/bash_env
-cat $BASH_ENV
+source $BASH_ENV
+echo "nuget now is $(which nuget)"
 
 # Use dummy msbuild; 'echo 15' required to prevent fallback to xbuild as build task check for msbuild version 15 and above
 echo """#!/bin/sh
