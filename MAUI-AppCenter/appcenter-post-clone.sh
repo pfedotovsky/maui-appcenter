@@ -2,22 +2,17 @@
 export DOTNET_NOLOGO=true
 dotnet --info
 
-# printenv
-
-# Set up BASH_ENV; In AppCenter BASH_ENV should be set to ~/AppCenter/bash_env
+# Log diagnostics information
+echo "build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
+echo "nuget is $(which nuget)"
+echo "msbuild is $(which msbuild)"
 echo "BASH_ENV is $BASH_ENV"
 echo "PATH is $PATH"
-mv $APPCENTER_SOURCE_DIRECTORY/AppCenter ~
-chmod +x ~/AppCenter/msbuild
-ls -l ~/AppCenter
-
-# Log diagnostics information
-echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
-echo "Nuget is $(which nuget)"
 
 # Disable several redundant AppCenter tasks
 # echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
 # echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
+# echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'cmdlinetask.js')
 
 # Install MAUI workloads
 dotnet workload restore
@@ -28,8 +23,14 @@ dotnet workload restore
 # Create release ipa for devices
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$APPCENTER_BUILD_ID
 
-# Use dummy msbuild
+# Set up BASH_ENV to override nuget; In AppCenter BASH_ENV should be set to something like ~/AppCenter/bash_env
+dirName=$(dirname $BASH_ENV)
+echo "export PATH=$dirName:$PATH" > $BASH_ENV
+echo "echo Dummy Nuget" > $dirName/nuget
+
+ls -l $dirName
+
+# Use dummy msbuild; 'echo 15' required to prevent fallback to xbuild as build task check for msbuild version 15 and above
 echo """#!/bin/sh
-# echo $(msbuild /version /nologo)
-echo $PATH
+echo 15
 """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
