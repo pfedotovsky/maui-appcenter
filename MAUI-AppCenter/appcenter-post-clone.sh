@@ -8,6 +8,7 @@ dotnet --info
 echo "BASH_ENV is $BASH_ENV"
 echo "PATH is $PATH"
 mv $APPCENTER_SOURCE_DIRECTORY/AppCenter ~
+chmod +x $APPCENTER_SOURCE_DIRECTORY/AppCenter/msbuild
 
 # Log diagnostics information
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
