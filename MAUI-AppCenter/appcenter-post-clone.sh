@@ -15,11 +15,6 @@ ls -l ~/AppCenter
 echo "Build configuration: $APPCENTER_XAMARIN_CONFIGURATION"
 echo "Nuget is $(which nuget)"
 
-# Print tasks info
-# find $AGENT_ROOTDIRECTORY -name 'xamarinios.js' | xargs cat
-# find $AGENT_ROOTDIRECTORY -name 'bash.js' | xargs cat
-# find $AGENT_ROOTDIRECTORY -name 'usedotnet.js' | xargs cat
-
 # Disable several redundant AppCenter tasks
 # echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'usedotnet.js')
 # echo -n "" > $(find $AGENT_ROOTDIRECTORY -name 'xamarinios.js')
@@ -34,6 +29,7 @@ dotnet workload restore
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$APPCENTER_BUILD_ID
 
 # Use dummy msbuild
-# echo """#!/bin/sh
+echo """#!/bin/sh
 # echo $(msbuild /version /nologo)
-# """ | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
+echo $PATH
+""" | sudo tee /Library/Frameworks/Mono.framework/Commands/msbuild
