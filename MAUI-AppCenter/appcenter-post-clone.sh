@@ -18,8 +18,10 @@ echo "echo 15" > $dirName/msbuild
 chmod +x $dirName/nuget
 chmod +x $dirName/msbuild
 
-# source $BASH_ENV
-# echo "nuget now is $(which nuget)"
+# Test BASH_ENV setup
+source $BASH_ENV
+echo "nuget now is $(which nuget)"
+echo "msbuild now is $(which msbuild)"
 
 # Use dummy msbuild; 'echo 15' required to prevent fallback to xbuild as build task check for msbuild version 15 and above
 echo """#!/bin/sh
