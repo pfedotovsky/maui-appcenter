@@ -20,11 +20,11 @@ dotnet workload restore
 # Create release ipa for devices
 dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentifier=ios-arm64 /p:CodesignKey="$APPLE_CERTIFICATE_SIGNING_IDENTITY" /p:ApplicationVersion=$APPCENTER_BUILD_ID
 
-mkdir $(build.artifactstagingdirectory)/build
-mkdir $(build.artifactstagingdirectory)/symbols
+mkdir $BUILD_ARTIFACTSTAGINGDIRECTORY/build
+mkdir $BUILD_ARTIFACTSTAGINGDIRECTORY/symbols
 
 find . ! -path '*/obj/*' -type f -name '*.ipa' -print0 \
 | xargs -0 stat -f \"%m %N\" | sort -rn | head -1 | cut -f2- -d\" \" \
-| xargs -L 1 -I{} cp -R -v {} $(build.artifactstagingdirectory)/build
+| xargs -L 1 -I{} cp -R -v {} $BUILD_ARTIFACTSTAGINGDIRECTORY/build
 
-find . -type d -name "*.dSYM" -exec cp -v -R {} $(build.artifactstagingdirectory)/symbols
+find . -type d -name "*.dSYM" -exec cp -v -R {} $BUILD_ARTIFACTSTAGINGDIRECTORY/symbols
