@@ -23,8 +23,6 @@ dotnet publish -f:net7.0-ios -c:Release /p:ArchiveOnBuild=true /p:RuntimeIdentif
 mkdir $BUILD_ARTIFACTSTAGINGDIRECTORY/build
 mkdir $BUILD_ARTIFACTSTAGINGDIRECTORY/symbols
 
-find . ! -path '*/obj/*' -type f -name '*.ipa' -print0 \
-| xargs -0 stat -f \"%m %N\" | sort -rn | head -1 | cut -f2- -d\" \" \
-| xargs -L 1 -I{} cp -R -v {} $BUILD_ARTIFACTSTAGINGDIRECTORY/build
+find . ! -path '*/obj/*' -type f -name '*.ipa' -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -1 | cut -f2- -d" " | xargs -L 1 -I{} cp -R -v {} $BUILD_ARTIFACTSTAGINGDIRECTORY/build
 
-find . -type d -name "*.dSYM" -exec cp -v -R {} $BUILD_ARTIFACTSTAGINGDIRECTORY/symbols
+find . -type d -name "*.dSYM" -exec cp -v -R {} $BUILD_ARTIFACTSTAGINGDIRECTORY/symbols \;
