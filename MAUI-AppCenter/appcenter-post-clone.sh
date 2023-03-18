@@ -13,8 +13,10 @@ echo "PATH is $PATH"
 dirName=$(dirname $BASH_ENV)
 mkdir $dirName
 echo "export PATH=$dirName:$PATH" > $BASH_ENV
-echo "echo Dummy Nuget" > $dirName/nuget
+echo "echo dummy nuget" > $dirName/nuget
+echo "echo 15" > $dirName/msbuild
 chmod +x $dirName/nuget
+chmod +x $dirName/msbuild
 
 # source $BASH_ENV
 # echo "nuget now is $(which nuget)"
